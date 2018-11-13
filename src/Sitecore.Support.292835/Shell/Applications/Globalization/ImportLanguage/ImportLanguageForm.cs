@@ -1201,14 +1201,10 @@ namespace Sitecore.Support.Shell.Applications.Globalization.ImportLanguage
           }
 
           string text = XmlUtil.GetValue(languageNode);
-          if (item[fieldID] == text && !field.Unversioned && !field.Shared)
-          {
-            continue;
-          }
-
+          
           item.Editing.BeginEdit();
           field.SetValue(text, true);
-          item.Editing.EndEdit();
+          item.Editing.EndEdit();          
         }
       }
 
